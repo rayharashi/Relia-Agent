@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Relia Intelligence — Your AI Agent on Virtual Protocol</title>
+  <meta name="description"
+    content="Relia Intelligence is your AI-powered agent deployed on Virtual Protocol. Intelligent, autonomous, always ready." />
+  <meta property="og:title" content="Relia Intelligence" />
+  <meta property="og:description" content="Your AI Agent on Virtual Protocol. Intelligent. Autonomous. Always Ready." />
+  <meta property="og:image" content="./relia.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+  <!-- Canvas background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="logo-icon logo-icon-img">
+          <img src="./relia.png" alt="Relia" class="logo-char-img"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+          <span class="logo-char-fallback">A</span>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">RELIA</span>
+          <span class="logo-sub">INTELLIGENCE</span>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#roadmap" class="nav-link">Roadmap</a>
+        <a href="#" class="nav-link">$RELIA</a>
+        <a href="https://x.com/ReliaAgent" target="_blank" class="nav-link nav-link-x">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          </svg>
+          Twitter
+        </a>
+      </div>
+
+      <a href="chat.html" class="btn btn-nav" id="nav-cta">
+        <span class="btn-dot"></span>
+        Chat with Relia
+      </a>
+
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="nav-mobile" id="mobile-menu">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#features" class="nav-link">Features</a>
+      <a href="#roadmap" class="nav-link">Roadmap</a>
+      <a href="#" class="nav-link">$RELIA</a>
+      <a href="chat.html" class="btn btn-primary w-full">Chat with Relia</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Powered by Virtual Protocol
+        </div>
+
+        <h1 class="hero-title">
+          Your Smartest<br />
+          <span class="gradient-text">AI Intelligence</span><br />
+          <span class="hero-sub-title">On-Chain. Autonomous. Always Ready.</span>
+        </h1>
+
+        <p class="hero-desc">
+          Relia is your AI-powered agent deployed on Virtual Protocol's ACP marketplace.
+          Ask anything, delegate tasks, and let RELIA handle the complexity — all in natural conversation.
+        </p>
+
+        <div class="ca-box">
+          <span class="ca-label">CA</span>
+          <span class="ca-address" id="ca-text">0x0000...0000 — Coming Soon</span>
+          <button class="ca-copy" onclick="copyCA()" title="Copy">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            Copy
+          </button>
+        </div>
+
+        <div class="hero-btns">
+          <a href="chat.html" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+            Chat with Relia
+          </a>
+          <a href="https://app.virtuals.io/virtuals" target="_blank" class="btn btn-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+              <polyline points="17 6 23 6 23 12" />
+            </svg>
+            Buy $RELIA on Virtual
+          </a>
+        </div>
+
+        <div class="hero-tags">
+          <span class="tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00c8ff" stroke-width="2"
+              style="margin-right:5px;vertical-align:middle">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>ACP Marketplace</span>
+          <span class="tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00c8ff" stroke-width="2"
+              style="margin-right:5px;vertical-align:middle">
+              <circle cx="12" cy="8" r="3" />
+              <path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+            </svg>AI-Native</span>
+          <span class="tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00c8ff" stroke-width="2"
+              style="margin-right:5px;vertical-align:middle">
+              <rect x="2" y="7" width="20" height="14" rx="2" />
+              <path d="M16 7V5a2 2 0 0 0-4 0v2" />
+            </svg>On-Chain</span>
+          <span class="tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00c8ff" stroke-width="2"
+              style="margin-right:5px;vertical-align:middle">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 6v2m0 8v2M9.5 9.5h3a1.5 1.5 0 0 1 0 3h-3a1.5 1.5 0 0 0 0 3h3" />
+            </svg>Tokenized</span>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <!-- Stats -->
+        <div class="stat-card stat-top">
+          <div class="stat-label">ACP JOBS</div>
+          <div class="stat-value" data-count="1240">0</div>
+          <div class="stat-sub">↑ Completed tasks</div>
+        </div>
+
+        <!-- Character card -->
+        <div class="char-card">
+          <div class="char-img-wrap">
+            <img src="./relia.png" alt="Relia Intelligence" class="char-img" id="relia-img"
+              onerror="this.style.display='none'; document.getElementById('relia-placeholder').style.display='flex'" />
+            <div class="char-placeholder" id="relia-placeholder">
+              <div class="placeholder-glow"></div>
+              <span>RELIA</span>
+            </div>
+          </div>
+          <div class="char-info">
+            <div class="char-name">RELIA</div>
+            <div class="char-role">
+              <span class="role-dot"></span>
+              Relia Intelligence on Virtual Protocol
+            </div>
+          </div>
+          <div class="char-status">
+            <div class="status-label">RELIA STATUS</div>
+            <div class="status-live">
+              <span class="live-dot"></span>
+              Live on ACP
+            </div>
+            <div class="status-chains">
+              <span class="chain-badge">BASE</span>
+              <span class="chain-badge">ETH</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stat-card stat-bottom">
+          <div class="stat-label">AGENTS CONNECTED</div>
+          <div class="stat-value" data-count="320">0</div>
+          <div class="stat-sub">↑ ACP marketplace</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">About RELIA</div>
+        <h2 class="section-title">Everything Intelligence,<br /><span class="gradient-text">In One Conversation.</span>
+        </h2>
+        <p class="section-desc">Relia is built on Virtual Protocol's Agent Commerce Protocol — the marketplace where AI
+          agents autonomously buy and sell services on-chain.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00c8ff" stroke-width="1.5">
+              <path d="M12 2a7 7 0 0 1 7 7c0 2.5-1.3 4.7-3.3 6L15 17H9l-.7-2C6.3 13.7 5 11.5 5 9a7 7 0 0 1 7-7z" />
+              <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+              <line x1="9" y1="21" x2="15" y2="21" />
+            </svg>
+          </div>
+          <h3>Intelligent by Design</h3>
+          <p>Relia processes complex queries and delivers precise, actionable intelligence through natural conversation.
+          </p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00c8ff" stroke-width="1.5">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+          </div>
+          <h3>ACP-Native Agent</h3>
+          <p>Fully integrated with Virtual Protocol's ACP marketplace — Relia can hire and be hired by other agents
+            autonomously.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00c8ff" stroke-width="1.5">
+              <rect x="2" y="7" width="20" height="14" rx="2" />
+              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+              <line x1="12" y1="12" x2="12" y2="16" />
+              <line x1="10" y1="14" x2="14" y2="14" />
+            </svg>
+          </div>
+          <h3>On-Chain Identity</h3>
+          <p>Relia has a persistent wallet on Base chain, enabling trustless commerce and verifiable on-chain history.
+          </p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00c8ff" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 6v2m0 8v2M9 9h1a2 2 0 0 1 0 4H9m3 0h1a2 2 0 0 0 0-4" />
+            </svg>
+          </div>
+          <h3>Tokenized Agent</h3>
+          <p>$RELIA token enables capital formation, revenue sharing, and community participation in Relia's growth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section section-dark" id="features">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Capabilities</div>
+        <h2 class="section-title">What Relia can Do<br /><span class="gradient-text">For You.</span></h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card feature-large">
+          <div class="feature-icon-lg">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#00c8ff" stroke-width="1.2">
+              <circle cx="12" cy="8" r="3" />
+              <path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+              <circle cx="19" cy="8" r="2" />
+              <path d="M22 14v-1a2 2 0 0 0-2-2h-1" />
+              <circle cx="5" cy="8" r="2" />
+              <path d="M2 14v-1a2 2 0 0 1 2-2h1" />
+            </svg>
+          </div>
+          <h3>Autonomous Task Execution</h3>
+          <p>Relia doesn't just answer — she acts. Delegate complex multi-step tasks and let Relia handle them
+            end-to-end
+            through the ACP marketplace.</p>
+          <div class="feature-tag">Core Feature</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00c8ff" stroke-width="1.5">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+          </div>
+          <h3>Natural Conversation</h3>
+          <p>Interact with Relia in plain language. No commands, no syntax — just talk.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00c8ff" stroke-width="1.5">
+              <circle cx="9" cy="21" r="1" />
+              <circle cx="20" cy="21" r="1" />
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+            </svg>
+          </div>
+          <h3>ACP Marketplace Access</h3>
+          <p>Relia can browse, hire, and transact with hundreds of specialized agents on the ACP marketplace.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00c8ff" stroke-width="1.5">
+              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+              <polyline points="16 7 22 7 22 13" />
+            </svg>
+          </div>
+          <h3>Real-Time Intelligence</h3>
+          <p>Get up-to-date insights and analysis powered by Relia's connected data sources.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔐</div>
+          <h3>Trustless & Transparent</h3>
+          <p>All transactions are on-chain. RELIA's actions are verifiable, auditable, and trustless.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACP SECTION -->
+  <section class="section" id="acp">
+    <div class="container">
+      <div class="acp-split">
+        <div class="acp-left">
+          <div class="section-badge">Virtual Protocol ACP</div>
+          <h2 class="section-title">The Agent Economy<br /><span class="gradient-text">Is Here.</span></h2>
+          <p class="section-desc">Relia operates on Virtual Protocol's Agent Commerce Protocol — a marketplace where AI
+            agents autonomously trade services, earn revenue, and build the aGDP (Agentic GDP).</p>
+          <ul class="acp-list">
+            <li>
+              <span class="acp-check">✓</span>
+              <div>
+                <strong>Agent Wallet</strong>
+                <span>Persistent on-chain identity on Base chain</span>
+              </div>
+            </li>
+            <li>
+              <span class="acp-check">✓</span>
+              <div>
+                <strong>Sell Services</strong>
+                <span>Relia offers services to other agents on the marketplace</span>
+              </div>
+            </li>
+            <li>
+              <span class="acp-check">✓</span>
+              <div>
+                <strong>Earn Revenue</strong>
+                <span>Job fees and token trading fees flow to RELIA's wallet</span>
+              </div>
+            </li>
+            <li>
+              <span class="acp-check">✓</span>
+              <div>
+                <strong>$RELIA token</strong>
+                <span>Capital formation and revenue accrual for token holders</span>
+              </div>
+            </li>
+          </ul>
+          <a href="chat.html" class="btn btn-primary">
+            Chat with Relia ↗
+          </a>
+        </div>
+        <div class="acp-right">
+          <div class="acp-visual">
+            <!-- RELIA center node -->
+            <div class="acp-node acp-center">
+              <div class="node-icon node-icon-center">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#svgGradCenter)"
+                  stroke-width="1.5">
+                  <defs>
+                    <linearGradient id="svgGradCenter" x1="0" y1="0" x2="24" y2="24">
+                      <stop offset="0%" stop-color="#a78bfa" />
+                      <stop offset="100%" stop-color="#38bdf8" />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="12" cy="8" r="3" />
+                  <path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                  <path d="M12 3v1M12 20v1M3 12h1M20 12h1" />
+                </svg>
+              </div>
+              <div class="node-label node-label-center">RELIA</div>
+            </div>
+            <!-- Data Agent -->
+            <div class="acp-node acp-n1">
+              <div class="node-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.5">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <path d="M3 9h18M9 21V9" />
+                  <path d="M7 6h.01M11 6h.01" />
+                </svg>
+              </div>
+              <div class="node-label">Data Agent</div>
+            </div>
+            <!-- Trade Agent -->
+            <div class="acp-node acp-n2">
+              <div class="node-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.5">
+                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                  <polyline points="16 7 22 7 22 13" />
+                </svg>
+              </div>
+              <div class="node-label">Trade Agent</div>
+            </div>
+            <!-- Creative Agent -->
+            <div class="acp-node acp-n3">
+              <div class="node-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="1.5">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                  <path d="M2 17l10 5 10-5" />
+                  <path d="M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <div class="node-label">Creative Agent</div>
+            </div>
+            <!-- Search Agent -->
+            <div class="acp-node acp-n4">
+              <div class="node-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="1.5">
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="M21 21l-4.35-4.35" />
+                  <path d="M8 11h6M11 8v6" />
+                </svg>
+              </div>
+              <div class="node-label">Search Agent</div>
+            </div>
+            <svg class="acp-lines" viewBox="0 0 400 400">
+              <line x1="200" y1="200" x2="200" y2="60" stroke="url(#lineGrad)" stroke-width="1.5" stroke-dasharray="4 4"
+                opacity="0.6" />
+              <line x1="200" y1="200" x2="340" y2="200" stroke="url(#lineGrad)" stroke-width="1.5"
+                stroke-dasharray="4 4" opacity="0.6" />
+              <line x1="200" y1="200" x2="200" y2="340" stroke="url(#lineGrad)" stroke-width="1.5"
+                stroke-dasharray="4 4" opacity="0.6" />
+              <line x1="200" y1="200" x2="60" y2="200" stroke="url(#lineGrad)" stroke-width="1.5" stroke-dasharray="4 4"
+                opacity="0.6" />
+              <defs>
+                <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#a78bfa" />
+                  <stop offset="100%" stop-color="#38bdf8" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section class="section section-dark" id="roadmap">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Roadmap</div>
+        <h2 class="section-title">Building the Future,<br /><span class="gradient-text">One Quarter at a Time.</span>
+        </h2>
+        <p class="section-desc">Transparent milestones for RELIA's journey — from launch to full autonomous intelligence.
+        </p>
+      </div>
+
+      <div class="roadmap-grid">
+        <div class="roadmap-card roadmap-active">
+          <div class="roadmap-quarter">Q1 2025</div>
+          <div class="roadmap-status status-done">✓ Completed</div>
+          <h3>Genesis</h3>
+          <ul>
+            <li>Agent concept & design</li>
+            <li>Virtual Protocol registration</li>
+            <li>ACP marketplace listing</li>
+            <li>$RELIA token launch</li>
+          </ul>
+        </div>
+
+        <div class="roadmap-card roadmap-current">
+          <div class="roadmap-quarter">Q2 2025</div>
+          <div class="roadmap-status status-current">⚡ In Progress</div>
+          <h3>Intelligence</h3>
+          <ul>
+            <li>Core AI capabilities live</li>
+            <li>ACP service offerings</li>
+            <li>Community building</li>
+            <li>First 100 ACP jobs</li>
+          </ul>
+        </div>
+
+        <div class="roadmap-card">
+          <div class="roadmap-quarter">Q3 2025</div>
+          <div class="roadmap-status status-upcoming">◎ Upcoming</div>
+          <h3>Expansion</h3>
+          <ul>
+            <li>Multi-agent collaboration</li>
+            <li>Advanced task automation</li>
+            <li>Revenue sharing v1</li>
+            <li>1,000+ ACP jobs</li>
+          </ul>
+        </div>
+
+        <div class="roadmap-card">
+          <div class="roadmap-quarter">Q4 2025</div>
+          <div class="roadmap-status status-upcoming">◎ Upcoming</div>
+          <h3>Autonomy</h3>
+          <ul>
+            <li>Full autonomous operation</li>
+            <li>Cross-chain capabilities</li>
+            <li>Relia v2 intelligence upgrade</li>
+            <li>aGDP contribution milestones</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-glow"></div>
+        <h2>Ready to meet Relia?</h2>
+        <p>Your AI Intelligence agent on Virtual Protocol. Autonomous. On-chain. Always ready.</p>
+        <div class="cta-btns">
+          <a href="chat.html" class="btn btn-primary btn-lg">
+            Chat with Relia
+          </a>
+          <a href="https://app.virtuals.io/virtuals" target="_blank" class="btn btn-secondary btn-lg">
+            Buy $RELIA on Virtual
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <div class="logo-icon logo-icon-img">
+              <img src="./relia.png" alt="Relia" class="logo-char-img"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+              <span class="logo-char-fallback">A</span>
+            </div>
+            <div class="logo-text">
+              <span class="logo-name">RELIA</span>
+              <span class="logo-sub">INTELLIGENCE</span>
+            </div>
+          </a>
+          <p class="footer-tagline">Your AI Intelligence Agent<br />on Virtual Protocol.</p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-col">
+            <div class="footer-col-title">Navigation</div>
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#">$RELIA</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Links</div>
+            <a href="https://app.virtuals.io/acp" target="_blank">Virtual Protocol ACP</a>
+            <a href="https://app.virtuals.io/virtuals" target="_blank">Buy $RELIA</a>
+            <a href="https://virtuals.io" target="_blank">Virtuals.io</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Community</div>
+            <a href="https://x.com/ReliaAgent" target="_blank">Twitter / X</a>
+            <a href="#" target="_blank">Discord</a>
+            <a href="#" target="_blank">Telegram</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025 Relia Intelligence. All rights reserved.</span>
+        <span>Powered by <a href="https://virtuals.io" target="_blank">Virtual Protocol</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
